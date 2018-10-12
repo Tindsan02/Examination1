@@ -20,7 +20,7 @@ public class ScriptShip : MonoBehaviour
     public float RandomR;
     public float RandomG;
     public float RandomB;
-    
+
     public float x;
     public float y;
     public float z;
@@ -40,7 +40,7 @@ public class ScriptShip : MonoBehaviour
 
         speed = Random.Range(4f, 15f);
         //Speed är nu en random hastighet.
-        
+
     }
 
     // Update is called once per frame
@@ -99,25 +99,26 @@ public class ScriptShip : MonoBehaviour
         Minuter = (Timer / 60);
         //Timern i minuter.
         print(string.Format("{0:0}:{01:00}", Minuter, Sekunder));
-        //Den snygga timer printaren i rätt ordning.
+        //Den snygga timeprintern i rätt ordning.
 
-        if (transform.position.x < -9.4)
+        if (transform.position.x < -9.4f)
         {
             transform.position = new Vector3(9.4f, transform.position.y, transform.position.z);
         }
 
-        if (transform.position.x > 9.4)
+        if (transform.position.x > 9.4f)
         {
             transform.position = new Vector3(-9.4f, transform.position.y, transform.position.z);
         }
 
-        if (transform.position.y < -5.55)
-        {
-            transform.position = new Vector3(transform.position.x, -5.55f, transform.position.z);
-        }
-        if (transform.position.y > 5.55)
+        if (transform.position.y < -5.55f)
         {
             transform.position = new Vector3(transform.position.x, 5.55f, transform.position.z);
+        }
+
+        if (transform.position.y > 5.55f)
+        {
+            transform.position = new Vector3(transform.position.x, -5.55f, transform.position.z);
         }
         //Om Ship går utanför skärmen så spwanar Ship i bestämd position
 
